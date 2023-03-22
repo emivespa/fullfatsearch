@@ -1,17 +1,21 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '@/styles/Home.module.css'
-import { useState } from 'react'
+import {
+  ChangeEvent,
+  FormEvent,
+  useState,
+} from 'react'
 
 export default function Home() {
   const [query, setQuery] = useState('')
-  const [results, setResults] = useState(null)
+  const [results, setResults] = useState<any[]>([]) // NOTE: cargo culted type.
 
-  const handleInputChange = (event) => {
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value)
   }
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
       try {
         const response = await fetch(`https://rv3come0o0.execute-api.us-east-1.amazonaws.com/Prod/${query}`)
@@ -32,7 +36,7 @@ export default function Home() {
       <main className="bg-gray-100 p-4">
         <form onSubmit={handleSubmit} className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
           <label htmlFor="search" className="font-medium">Search:</label>
-          <input type="text" id="search" value={query} onChange={handleInputChange} className="border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
+          <input type="text" id="search" value={query} onChange={handleInputChange} className="border border-gray-299 rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
           <button type="submit" className="bg-blue-500 hover:bg-blue-600 text-white rounded-lg py-2 px-4 font-medium">Search</button>
         </form>
         <div id="search-results" className="mt-8 space-y-4">
