@@ -25,6 +25,9 @@ export default function Home() {
         console.log(error)
       }
   }
+  // <div>
+  //   <Image className="" height="400" width="400" src="/rabbit.png" alt="White Rabbit as a Dungeons And Dragons warlock, down the rabbit hole, looking through a magnifying glass, Doom cover style, Frank Frazetta, masterpiece"/>
+  // </div>
   return (
     <>
       <Head>
@@ -33,24 +36,32 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="p-4">
-        <Image className="mx-auto" height="400" width="400" src="/rabbit.png" alt="White Rabbit as a Dungeons And Dragons warlock, down the rabbit hole, looking through a magnifying glass, Doom cover style, Frank Frazetta, masterpiece"/>
-        <form onSubmit={handleSubmit}
-        className="m-4 flex flex-col md:flex-row items-center space-y-4 md:space-y-0">
-          <label htmlFor="search" className="font-medium">Search:</label>
-          <input type="text" id="search" value={query} onChange={handleInputChange} className="m-4 w-full border border-gray-299 rounded-lg py-4 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
-          <button type="submit" className="bg-blue-500 hover:bg-blue-600 text-white rounded-lg py-2 px-4 font-medium">Search</button>
-        </form>
-        <div id="search-results" className="mt-8 space-y-4">
+      <main className="">
+        <div className="m-2 p-2">
+          <form className="" onSubmit={handleSubmit}>
+            <input
+            className="border border-slate-400 m-2 p-2"
+            type="text" value={query} onChange={handleInputChange}
+            id="search" placeholder="search"
+            />
+            <button className="bg-blue-500 text-white m-2 p-2" type="submit">Tuki</button>
+          </form>
+        </div>
+        <div className="m-2 p-2" id="search-results">
           {results && results.map((result) => (
-            <div className="bg-white shadow-sm rounded-lg p-4" key={result._id}>
-              <div className="text-lg font-medium">
-                <a href={`https://youtube.com/watch?v=${result._source.videoId}&t=${result._source.timestamp}`} className="hover:text-blue-500">{result._source.videoTitle}</a>
+            <div className="border border-slate-200 m-2 p-2" key={result._id}>
+              <div className="">
+                <a 
+                  className="text-indigo-800"
+                  href={`https://youtube.com/watch?v=${result._source.videoId}&t=${result._source.timestamp}`}
+                >
+                  {result._source.videoTitle}
+                </a>
               </div>
-              <div className="text-gray-500 mt-2">
+              <div className="text-neutral-400 text-xs">
                 {`https://youtube.com/watch?v=${result._source.videoId}&t=${result._source.timestamp}`}
               </div>
-              <div className="mt-2">
+              <div className="font-mono">
                 {result._source.text}
               </div>
             </div>
