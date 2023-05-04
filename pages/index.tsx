@@ -25,9 +25,6 @@ export default function Home() {
         console.log(error)
       }
   }
-  // <div>
-  //   <Image className="" height="400" width="400" src="/rabbit.png" alt="White Rabbit as a Dungeons And Dragons warlock, down the rabbit hole, looking through a magnifying glass, Doom cover style, Frank Frazetta, masterpiece"/>
-  // </div>
   return (
     <>
       <Head>
@@ -51,7 +48,7 @@ export default function Home() {
           {results && results.map((result) => (
             <div className="border border-slate-200 m-2 p-2" key={result._id}>
               <div className="">
-                <a 
+                <a
                   className="text-indigo-800"
                   href={`https://youtube.com/watch?v=${result._source.videoId}&t=${result._source.timestamp}`}
                 >
