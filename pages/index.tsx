@@ -18,7 +18,7 @@ export default function Home() {
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
       try {
-        const response = await fetch(`https://rv3come0o0.execute-api.us-east-1.amazonaws.com/Prod/${query}`)
+        const response = await fetch(`https://rv3come0o0.execute-api.us-east-1.amazonaws.com/Prod/s?q=${query}`)
           const data = await response.json()
           setResults(data.hits.hits)
       } catch (error) {
