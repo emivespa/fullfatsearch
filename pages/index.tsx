@@ -72,7 +72,7 @@ export default function Home() {
 								<br/>
 								<code>videoId:MIoxw3nupFo AND &quot;propio marco&quot;</code>
 								<br/>
-								<code>&quot;mercado como&quot; AND (concepto OR idea) </code>
+								<code>&quot;mercado como&quot; AND (concepto OR entidad) </code>
 								</span>
 							</div>
 						)
