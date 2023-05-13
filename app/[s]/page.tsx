@@ -55,13 +55,12 @@ export default function Page({ params }: any) {
                   <Link
                     href={`https://youtube.com/watch?v=${result._source.videoId}&t=${result._source.timestamp}`}
                     prefetch={false}
-                    style={{color: 'linktext'}}
                   >
                     {result._source.videoTitle}
                     &nbsp;<span className="font-mono">&lt;{prettyTime(result._source.timestamp)}&gt;</span>
                   </Link>
                 </div>
-                <div className="text-xs" style={{color: 'GrayText'}}>
+                <div className="text-graytext text-xs">
                   {`https://youtube.com/watch?v=${result._source.videoId}&t=${result._source.timestamp}`}
                 </div>
                 <div className="font-mono">

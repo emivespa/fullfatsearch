@@ -1,16 +1,13 @@
-"use client" // FIXME.
-
 export default function Home() {
   return (
     <>
       <main className="">
         <div className="m-2 p-2">
-          <span className="text-lg">Para los gordos dorking:
+          <p className="text-lg">Para los gordos dorking:</p>
           <br/>
-          <code>videoId:MIoxw3nupFo AND &quot;propio marco&quot;</code>
+          <pre>videoId:MIoxw3nupFo AND &quot;propio marco&quot;</pre>
           <br/>
-          <code>&quot;mercado como&quot; AND (concepto OR entidad) </code>
-          </span>
+          <pre>&quot;mercado como&quot; AND (concepto OR entidad) </pre>
         </div>
       </main>
     </>
