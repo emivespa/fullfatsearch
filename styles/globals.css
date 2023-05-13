@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-	@apply
-		bg-white
-		text-neutral-900
-	;
-}
+/* body { */
+/* 	@apply */
+/* 		bg-white */
+/* 		text-neutral-900 */
+/* 	; */
+/* } */

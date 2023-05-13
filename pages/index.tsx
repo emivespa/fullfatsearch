@@ -30,6 +30,7 @@ export default function Home() {
 		<>
 			<Head>
 				<title>full fat search</title>
+				<meta name="color-scheme" content="dark light" />
 				<meta name="description" content="busca conejo" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🐇</text></svg>" />
@@ -62,16 +63,16 @@ export default function Home() {
 							</div>
 						) : (
 							results.map((result) => (
-								<div className="border border-slate-200 m-2 p-2" key={result._id}>
+								<div className="m-2 p-2" key={result._id}>
 									<div className="">
 										<a
-											className="text-indigo-800"
+											className="text-indigo-600"
 											href={`https://youtube.com/watch?v=${result._source.videoId}&t=${result._source.timestamp}`}
 										>
 											{result._source.videoTitle}
 										</a>
 									</div>
-									<div className="text-neutral-400 text-xs">
+									<div className="text-neutral-600 text-xs">
 										{`https://youtube.com/watch?v=${result._source.videoId}&t=${result._source.timestamp}`}
 									</div>
 									<div className="font-mono">
