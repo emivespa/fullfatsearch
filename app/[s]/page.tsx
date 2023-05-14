@@ -1,7 +1,6 @@
  "use client" // FIXME.
 
 import Image from 'next/image'
-import Link from 'next/link'
 import {
   useState,
   useEffect,
@@ -52,13 +51,12 @@ export default function Page({ params }: any) {
             results.map((result) => (
               <div className="m-2 p-2" key={result._id}>
                 <div className="">
-                  <Link
+                  <a
                     href={`https://youtube.com/watch?v=${result._source.videoId}&t=${result._source.timestamp}`}
-                    prefetch={false}
                   >
                     {result._source.videoTitle}
                     &nbsp;<span className="font-mono">&lt;{prettyTime(result._source.timestamp)}&gt;</span>
-                  </Link>
+                  </a>
                 </div>
                 <div className="text-graytext text-xs">
                   {`https://youtube.com/watch?v=${result._source.videoId}&t=${result._source.timestamp}`}
