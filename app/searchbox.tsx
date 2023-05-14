@@ -7,6 +7,8 @@ import {
   useState,
 } from 'react'
 import { useRouter } from 'next/navigation'
+import { Input } from '@/components/ui/input'
+import { Button } from '@/components/ui/button'
 
 
 export default function SearchBox() {
@@ -21,8 +23,8 @@ export default function SearchBox() {
         router.push(`/${query}`)
       }}
     >
-      <input
-        className="flex-auto border border-graytext m-4 p-2 text-lg bg-field text-fieldtext"
+      <Input
+        className="flex-auto border border-border m-4 p-2"
         type="text"
         value={query}
         onChange={(event: ChangeEvent<HTMLInputElement>) => {
@@ -31,7 +33,7 @@ export default function SearchBox() {
         id="search" placeholder="busca por subtitulo"
       />
       <button
-        className="flex-initial m-4 p-2 ml-0 text-lg bg-buttonface border-buttonborder text-buttontext"
+        className="flex-initial m-4 p-2 ml-0"
         type="submit"
       >
         🐇
