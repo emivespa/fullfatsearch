@@ -22,7 +22,7 @@ export default function SearchBox() {
       }}
     >
       <input
-        className="flex-auto border m-4 p-2 text-lg bg-field border-buttonborder text-fieldtext"
+        className="flex-auto border border-graytext m-4 p-2 text-lg bg-field text-fieldtext"
         type="text"
         value={query}
         onChange={(event: ChangeEvent<HTMLInputElement>) => {
@@ -31,7 +31,7 @@ export default function SearchBox() {
         id="search" placeholder="🐇"
       />
       <button
-        className="flex-initial border m-4 p-2 text-lg bg-buttonface border-buttonborder text-buttontext"
+        className="flex-initial m-4 p-2 ml-0 text-lg bg-buttonface border-buttonborder text-buttontext"
         type="submit"
       >
         Tuki

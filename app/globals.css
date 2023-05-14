@@ -29,3 +29,7 @@
 a:link { color: linktext; }
 a:visited { color: visitedtext; }
 a:active { color: activetext; }
+
+pre {
+  white-space: pre-wrap;
+}
