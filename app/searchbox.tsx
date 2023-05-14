@@ -28,13 +28,13 @@ export default function SearchBox() {
         onChange={(event: ChangeEvent<HTMLInputElement>) => {
           setQuery(event.target.value)
         }}
-        id="search" placeholder="🐇"
+        id="search" placeholder="busca por subtitulo"
       />
       <button
         className="flex-initial m-4 p-2 ml-0 text-lg bg-buttonface border-buttonborder text-buttontext"
         type="submit"
       >
-        Tuki
+        🐇
       </button>
     </form>
   )
