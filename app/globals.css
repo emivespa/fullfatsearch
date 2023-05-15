@@ -84,6 +84,6 @@ a:link { color: linktext; }
 a:visited { color: visitedtext; }
 a:active { color: activetext; }
 .markdown * { @apply p-2; }
-.markdown h1 { @apply text-3xl; }
-.markdown h2 { @apply text-3xl; }
-.markdown h3 { @apply text-3xl; }
+.markdown h1 { @apply text-3xl; @apply font-black;}
+.markdown h2 { @apply text-2xl; @apply font-bold;}
+.markdown h3 { @apply text-xl; @apply font-medium;}
