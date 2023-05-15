@@ -24,7 +24,7 @@ export default function SearchBox() {
       }}
     >
       <Input
-        className="flex-auto border border-border m-4 p-2"
+        className="flex-auto border-graytext m-4 p-2 text-fieldtext bg-field"
         type="text"
         value={query}
         onChange={(event: ChangeEvent<HTMLInputElement>) => {
@@ -32,12 +32,12 @@ export default function SearchBox() {
         }}
         id="search" placeholder="busca por subtitulo"
       />
-      <button
-        className="flex-initial m-4 p-2 ml-0"
+      <Button
+        className="flex-initial m-4 p-2 ml-0 bg-buttonface text-buttontext border-buttonborder"
         type="submit"
       >
         🐇
-      </button>
+      </Button>
     </form>
   )
 }

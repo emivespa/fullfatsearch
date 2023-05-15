@@ -6,7 +6,6 @@ import {
   useEffect,
 } from 'react'
 
-
 export default function Page({ params }: any) {
   // const [query, setQuery] = useState('')
   const [results, setResults] = useState<any[] | null>(null)
@@ -45,7 +44,7 @@ export default function Page({ params }: any) {
         ) : (
           results.length === 0 ? (
             <div className="m-2 p-2">
-              <span className="text-lg">no encontramos nada loko</span>
+              <span className="text-lg text-graytext">No encontramos nada</span>
             </div>
           ) : (
             results.map((result) => (
