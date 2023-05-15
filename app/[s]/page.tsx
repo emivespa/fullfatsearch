@@ -20,8 +20,7 @@ export default function Page({ params }: any) {
         console.log(error)
       }
     })()
-  })
-  // }, [])
+  }, [ params.s ])
 
   const prettyTime = (t: number) => {
     let hh = Math.floor(t / 3600).toString().padStart(2, '0')
@@ -34,7 +33,7 @@ export default function Page({ params }: any) {
     <>
       <main className="">
         {results === null ? (
-          <div className="flex m-2 p-2">
+          <div className="flex m-4 p-2">
             <Image
               alt="bunny running to and fro"
               src="/loading.gif"
@@ -43,12 +42,12 @@ export default function Page({ params }: any) {
           </div>
         ) : (
           results.length === 0 ? (
-            <div className="m-2 p-2">
-              <span className="text-lg text-graytext">No encontramos nada</span>
+            <div className="m-4 p-2">
+              <span className="text-graytext">No encontramos nada</span>
             </div>
           ) : (
             results.map((result) => (
-              <div className="m-2 p-2" key={result._id}>
+              <div className="m-4 p-2" key={result._id}>
                 <div className="">
                   <a
                     href={`https://youtube.com/watch?v=${result._source.videoId}&t=${result._source.timestamp}`}

@@ -1,8 +1,17 @@
 # fullfatsearch
 
-Search engine de circulovicioso.club
+es un motor de busqueda para episodios de circulovicioso.club
 
-	npm run dev
-	yarn dev
-	pnpm dev
-	$BROWSER localhost:3000
+## dorking
+
+	videoId:MIoxw3nupFo AND "propio marco"
+
+	"mercado como" AND (concepto OR entidad)
+
+## roadmap
+
+- [ ] indexar episodios >127
+- [ ] nuevo indice con diff metadata:
+	- ids ordinales
+	- fechas
+- [ ] indice de episodios / capitulos

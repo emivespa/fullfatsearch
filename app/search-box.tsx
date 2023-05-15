@@ -1,6 +1,5 @@
 "use client"
 
-// import Image from 'next/image'
 import {
   ChangeEvent,
   FormEvent,
@@ -17,14 +16,14 @@ export default function SearchBox() {
 
   return (
     <form
-      className="flex"
+      className="flex border-b border-border"
       onSubmit={(event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
         router.push(`/${query}`)
       }}
     >
       <Input
-        className="flex-auto border-graytext m-4 p-2 text-fieldtext bg-field"
+        className="m-4 p-2 max-w-[80ch] bg-input border-border"
         type="text"
         value={query}
         onChange={(event: ChangeEvent<HTMLInputElement>) => {
@@ -33,7 +32,7 @@ export default function SearchBox() {
         id="search" placeholder="busca por subtitulo"
       />
       <Button
-        className="flex-initial m-4 p-2 ml-0 bg-buttonface text-buttontext border-buttonborder"
+        className="m-4 p-2 ml-0 bg-muted-foreground text-muted"
         type="submit"
       >
         🐇

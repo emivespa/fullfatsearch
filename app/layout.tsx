@@ -1,5 +1,7 @@
 import './globals.css'
-import SearchBox from './searchbox'
+import SearchBox from './search-box'
+// import Script from 'next/script'
+import { Providers } from './providers'
 
 export const metadata = {
   title: 'full fat search',
@@ -16,9 +18,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-canvas text-canvastext">
-        <SearchBox></SearchBox>
-        {children}
+      <body>
+        <Providers>
+          <SearchBox></SearchBox>
+          {children}
+        </Providers>
       </body>
     </html>
   )
