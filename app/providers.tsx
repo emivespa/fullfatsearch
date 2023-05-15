@@ -1,8 +1,13 @@
 'use client';
 
+import React, { ReactNode } from 'react'
 import { ThemeProvider } from '@wits/next-themes'
 
-export function Providers({ children }) {
+interface ProvidersProps {
+  children: ReactNode
+}
+
+export function Providers({ children }: any) {
   return (
     <ThemeProvider attribute="class">
       {children}
