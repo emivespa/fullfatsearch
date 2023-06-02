@@ -1,73 +1,65 @@
- "use client" // FIXME.
+"use client" // FIXME.
 
-import Image from 'next/image'
+import Image from "next/image"
 import {
   useState,
-  useEffect,
-} from 'react'
+  // useEffect,
+} from "react"
+import prettyTime from "../prettyTime"
 
 export default function Page({ params }: any) {
   // const [query, setQuery] = useState('')
   const [results, setResults] = useState<any[] | null>(null)
 
-  useEffect(() => {
-    (async () => {
-      try {
-        const response = await fetch(`https://rv3come0o0.execute-api.us-east-1.amazonaws.com/Prod/s?q=${params.s}&size=100`)
-          const data = await response.json()
-          setResults(data.hits.hits)
-      } catch (error) {
-        console.log(error)
-      }
-    })()
-  }, [ params.s ])
-
-  const prettyTime = (t: number) => {
-    let hh = Math.floor(t / 3600).toString().padStart(2, '0')
-    let mm = Math.floor(t % 3600 / 60).toString().padStart(2, '0')
-    let ss = Math.floor(t % 3600 % 60).toString().padStart(2, '0')
-    return `${hh}:${mm}:${ss}`
-  }
+  ;(async () => {
+    try {
+      const response = await fetch(
+        `https://rv3come0o0.execute-api.us-east-1.amazonaws.com/Prod/s?q=${params.s}&size=100`
+      )
+      const data = await response.json()
+      setResults(data.hits.hits)
+    } catch (error) {
+      setResults([])
+      console.log(error)
+    }
+  })()
 
   return (
-    <>
-      <main className="">
-        {results === null ? (
-          <div className="flex m-4 p-2">
-            <Image
-              alt="bunny running to and fro"
-              src="/loading.gif"
-              height={500} width={500}
-            />
-          </div>
-        ) : (
-          results.length === 0 ? (
-            <div className="m-4 p-2">
-              <span className="text-graytext">No encontramos nada</span>
-            </div>
-          ) : (
-            results.map((result) => (
-              <div className="m-4 p-2" key={result._id}>
-                <div className="">
-                  <a
-                    href={`https://youtube.com/watch?v=${result._source.videoId}&t=${result._source.timestamp}`}
-                  >
-                    {result._source.videoTitle}
-                    &nbsp;<span className="font-mono">&lt;{prettyTime(result._source.timestamp)}&gt;</span>
-                  </a>
-                </div>
-                <div className="text-graytext text-xs">
-                  {`https://youtube.com/watch?v=${result._source.videoId}&t=${result._source.timestamp}`}
-                </div>
-                <div className="font-mono">
-                  {result._source.text}
-                </div>
+    <main className="">
+      {results === null ? (
+        <div className="m-4 flex p-2">
+          <Image
+            alt="bunny running to and fro"
+            src="/loading.gif"
+            height={400}
+            width={400}
+          />
+        </div>
+      ) : results.length === 0 ? (
+        <div className="m-4 p-2">
+          <span className="text-graytext">No encontramos nada</span>
+        </div>
+      ) : (
+        <div className="m-4 flex flex-col gap-4 p-2">
+          {results.map((result) => (
+            <div key={result._id}>
+              <a
+                href={`https://youtube.com/watch?v=${result._source.videoId}&t=${result._source.timestamp}`}
+              >
+                {result._source.videoTitle}
+                &nbsp;
+                <span className="font-mono">
+                  &lt;{prettyTime(result._source.timestamp)}&gt;
+                </span>
+              </a>
+              <div className="text-xs text-graytext">
+                {`https://youtube.com/watch?v=${result._source.videoId}&t=${result._source.timestamp}`}
               </div>
-            ))
-          )
-        )}
-      </main>
-    </>
+              <div className="font-mono">{result._source.text}</div>
+            </div>
+          ))}
+        </div>
+      )}
+    </main>
   )
 }
-

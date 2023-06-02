@@ -18,9 +18,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className="max-w-[80ch] mx-auto">
         <Providers>
-          <SearchBox></SearchBox>
+          <SearchBox />
           {children}
         </Providers>
       </body>

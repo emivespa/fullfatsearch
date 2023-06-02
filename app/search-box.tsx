@@ -32,7 +32,7 @@ export default function SearchBox() {
         id="search" placeholder="busca por subtitulo"
       />
       <Button
-        className="m-4 p-2 ml-0 bg-muted-foreground text-muted"
+        className="m-4 p-2 ml-0 bg-primary text-primary-foreground"
         type="submit"
       >
         🐇
