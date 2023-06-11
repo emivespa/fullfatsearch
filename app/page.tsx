@@ -2,27 +2,34 @@ export default function Home() {
   return (
     <>
       <main className="">
-        <div className="m-4 markdown">
+        <div
+          className="
+          prose
+          m-4
+          max-w-none
+          dark:prose-invert
+          prose-p:text-canvastext
+          prose-code:font-normal
+          prose-code:text-canvastext
+          prose-code:before:content-['']
+          prose-code:after:content-['']
+          prose-code:bg-buttonface
+          prose-pre:bg-buttonface
+          prose-pre:text-canvastext
+          "
+        >
           <h1>fullfatsearch</h1>
-          <p>es un motor de busqueda para episodios de @CirculoVicioso8</p>
-          <h2>dorking</h2>
-          <pre>videoId:MIoxw3nupFo AND &quot;propio marco&quot;</pre>
+          <p>fullfatsearch es un motor de busqueda para episodios de @CirculoVicioso8</p>
+          <p>El ultimo episodio indexado es <em>Circulo Vicioso #127 - Dante Choi (CEO de Peabody)</em></p>
+          <h2>Dorking</h2>
+          <p>
+            Syntax de Lucene: comillas, paréntesis y operadores lógicos.
+            Busqueda por video con <code>AND videoId:XX</code>
+          </p>
+          <pre>&quot;propio marco&quot; AND videoId:MIoxw3nupFo</pre>
           <pre>&quot;mercado como&quot; AND (concepto OR entidad) </pre>
         </div>
       </main>
     </>
   )
 }
-
-// import dynamic from 'next/dynamic'
-// import Prose from './prose'
-//
-// export default function Page() {
-//   const Mdx = dynamic(() => import('@/README.mdx'))
-//   return (
-//     <Prose>
-//       <Mdx />
-//     </Prose>
-//   )
-// }
-//
