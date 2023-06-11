@@ -27,7 +27,7 @@ export default function Page({ params }: any) {
   return (
     <main className="">
       {results === null ? (
-        <div className="m-4 flex p-2">
+        <div className="m-4 flex justify-center p-2">
           <Image
             alt="bunny running to and fro"
             src="/loading.gif"

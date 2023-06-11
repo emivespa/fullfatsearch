@@ -1,17 +1,12 @@
 "use client"
 
-import {
-  ChangeEvent,
-  FormEvent,
-  useState,
-} from 'react'
-import { useRouter } from 'next/navigation'
-import { Input } from '@/components/ui/input'
-import { Button } from '@/components/ui/button'
-
+import { ChangeEvent, FormEvent, useState } from "react"
+import { useRouter } from "next/navigation"
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
 
 export default function SearchBox() {
-  const [query, setQuery] = useState('')
+  const [query, setQuery] = useState("")
   const router = useRouter()
 
   return (
@@ -23,16 +18,17 @@ export default function SearchBox() {
       }}
     >
       <Input
-        className="m-4 p-2 max-w-[80ch] bg-input border-border"
+        className="m-4 border-border bg-input p-2"
         type="text"
         value={query}
         onChange={(event: ChangeEvent<HTMLInputElement>) => {
           setQuery(event.target.value)
         }}
-        id="search" placeholder="busca por subtitulo"
+        id="search"
+        placeholder="busca por subtitulo"
       />
       <Button
-        className="m-4 p-2 ml-0 bg-primary text-primary-foreground"
+        className="m-4 ml-0 bg-primary p-2 text-primary-foreground"
         type="submit"
       >
         🐇
