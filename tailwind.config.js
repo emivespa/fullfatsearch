@@ -2,10 +2,10 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+  ],
   theme: {
     container: {
       center: true,
@@ -49,26 +49,6 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // https://drafts.csswg.org/css-color/#css-system-colors
-        canvas:            'canvas',
-        canvastext:        'canvastext',
-        linktext:          'linktext',
-        visitedtext:       'visitedtext',
-        activetext:        'activetext',
-        buttonface:        'buttonface',
-        buttontext:        'buttontext',
-        buttonborder:      'buttonborder',
-        field:             'field',
-        fieldtext:         'fieldtext',
-        highlight:         'highlight',
-        highlighttext:     'highlighttext',
-        selecteditem:      'selecteditem',
-        selecteditemtext:  'selecteditemtext',
-        mark:              'mark',
-        marktext:          'marktext',
-        graytext:          'graytext',
-        accentcolor:       'accentcolor',
-        accentcolortext:   'accentcolortext',
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -91,8 +71,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require("tailwindcss-animate"),
-    require("@tailwindcss/typography"),
-  ],
-}
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
+};

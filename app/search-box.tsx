@@ -1,20 +1,20 @@
-"use client"
+"use client";
 
-import { ChangeEvent, FormEvent, useState } from "react"
-import { useRouter } from "next/navigation"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
+import { ChangeEvent, FormEvent, useState } from "react";
+import { useRouter } from "next/navigation";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 export default function SearchBox() {
-  const [query, setQuery] = useState("")
-  const router = useRouter()
+  const [query, setQuery] = useState("");
+  const router = useRouter();
 
   return (
     <form
       className="flex border-b border-border"
       onSubmit={(event: FormEvent<HTMLFormElement>) => {
-        event.preventDefault()
-        router.push(`/${query}`)
+        event.preventDefault();
+        router.push(`/${query}`);
       }}
     >
       <Input
@@ -22,7 +22,7 @@ export default function SearchBox() {
         type="text"
         value={query}
         onChange={(event: ChangeEvent<HTMLInputElement>) => {
-          setQuery(event.target.value)
+          setQuery(event.target.value);
         }}
         id="search"
         placeholder="busca por subtitulo"
@@ -34,5 +34,5 @@ export default function SearchBox() {
         🐇
       </Button>
     </form>
-  )
+  );
 }

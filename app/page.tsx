@@ -8,19 +8,25 @@ export default function Home() {
           m-4
           max-w-none
           dark:prose-invert
-          prose-p:text-canvastext
+          prose-p:text-[canvastext]
+          prose-code:bg-[buttonface]
           prose-code:font-normal
-          prose-code:text-canvastext
+          prose-code:text-[canvastext]
           prose-code:before:content-['']
           prose-code:after:content-['']
-          prose-code:bg-buttonface
-          prose-pre:bg-buttonface
-          prose-pre:text-canvastext
+          prose-pre:bg-[buttonface]
+          prose-pre:text-[canvastext]
           "
         >
           <h1>fullfatsearch</h1>
-          <p>fullfatsearch es un motor de busqueda para episodios de @CirculoVicioso8</p>
-          <p>El ultimo episodio indexado es <em>Circulo Vicioso #127 - Dante Choi (CEO de Peabody)</em></p>
+          <p>
+            fullfatsearch es un motor de busqueda para episodios de
+            @CirculoVicioso8
+          </p>
+          <p>
+            El ultimo episodio indexado es{" "}
+            <em>Circulo Vicioso #127 - Dante Choi (CEO de Peabody)</em>
+          </p>
           <h2>Dorking</h2>
           <p>
             Syntax de Lucene: comillas, paréntesis y operadores lógicos.
@@ -31,5 +37,5 @@ export default function Home() {
         </div>
       </main>
     </>
-  )
+  );
 }

@@ -1,28 +1,28 @@
-"use client" // FIXME.
+"use client"; // FIXME.
 
-import Image from "next/image"
+import Image from "next/image";
 import {
   useState,
   // useEffect,
-} from "react"
-import prettyTime from "../prettyTime"
+} from "react";
+import prettyTime from "../prettyTime";
 
 export default function Page({ params }: any) {
   // const [query, setQuery] = useState('')
-  const [results, setResults] = useState<any[] | null>(null)
+  const [results, setResults] = useState<any[] | null>(null);
 
-  ;(async () => {
+  (async () => {
     try {
       const response = await fetch(
         `https://rv3come0o0.execute-api.us-east-1.amazonaws.com/Prod/s?q=${params.s}&size=100`
-      )
-      const data = await response.json()
-      setResults(data.hits.hits)
+      );
+      const data = await response.json();
+      setResults(data.hits.hits);
     } catch (error) {
-      setResults([])
-      console.log(error)
+      setResults([]);
+      console.log(error);
     }
-  })()
+  })();
 
   return (
     <main className="">
@@ -37,7 +37,7 @@ export default function Page({ params }: any) {
         </div>
       ) : results.length === 0 ? (
         <div className="m-4 p-2">
-          <span className="text-graytext">No encontramos nada</span>
+          <span className="text-[graytext]">No encontramos nada</span>
         </div>
       ) : (
         <div className="m-4 flex flex-col gap-4 p-2">
@@ -52,7 +52,7 @@ export default function Page({ params }: any) {
                   &lt;{prettyTime(result._source.timestamp)}&gt;
                 </span>
               </a>
-              <div className="text-xs text-graytext">
+              <div className="text-xs text-[graytext]">
                 {`https://youtube.com/watch?v=${result._source.videoId}&t=${result._source.timestamp}`}
               </div>
               <div className="font-mono">{result._source.text}</div>
@@ -61,5 +61,5 @@ export default function Page({ params }: any) {
         </div>
       )}
     </main>
-  )
+  );
 }
