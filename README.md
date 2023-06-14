@@ -11,7 +11,9 @@ es un motor de busqueda para episodios de circulovicioso.club
 ## roadmap
 
 - [ ] indexar episodios >127
-- [ ] nuevo indice con diff metadata:
+- [ ] nuevo indice con mas metadata:
 	- ids ordinales
 	- fechas
-- [ ] indice de episodios / capitulos
+- [ ] indice de episodios
+- [ ] indice de capitulos
+- [ ] agregar "los gordos andan diciendo"
