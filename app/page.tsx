@@ -1,4 +1,6 @@
-export default function Home() {
+import { Strikethrough } from "lucide-react"
+
+export default function Home(): FC {
   return (
     <>
       <main className="">
@@ -25,7 +27,11 @@ export default function Home() {
           </p>
           <p>
             El ultimo episodio indexado es{" "}
-            <em>Circulo Vicioso #127 - Dante Choi (CEO de Peabody)</em>
+            <s>
+              <em>Circulo Vicioso #127 - Dante Choi (CEO de Peabody)</em>
+            </s>
+            {" "}
+            <em>Circulo Vicioso #145 - Nicchinno Welcome Party</em>
           </p>
           <h2>Dorking</h2>
           <p>
