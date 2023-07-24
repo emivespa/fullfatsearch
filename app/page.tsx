@@ -1,6 +1,4 @@
-import { Strikethrough } from "lucide-react"
-
-export default function Home(): FC {
+export default function Home() {
   return (
     <>
       <main className="">
@@ -11,13 +9,10 @@ export default function Home(): FC {
           max-w-none
           dark:prose-invert
           prose-p:text-[canvastext]
-          prose-code:bg-[buttonface]
           prose-code:font-normal
           prose-code:text-[canvastext]
           prose-code:before:content-['']
           prose-code:after:content-['']
-          prose-pre:bg-[buttonface]
-          prose-pre:text-[canvastext]
           "
         >
           <h1>fullfatsearch</h1>
